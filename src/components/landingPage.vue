@@ -26,7 +26,7 @@
         </h4>
       </div>
     </div>
-    <div class="container-images">
+    <div class="container-images mb-15">
       <v-row>
         <v-col cols="">
           <v-card class="my-10 rounded-xl">
@@ -36,16 +36,6 @@
                 :src="city"
                 style="max-height: 820px"
               >
-                <!-- <div
-                  class="d-flex flex-column fill-height justify-center align-center text-white"
-                >
-                  <h1 class="text-h2 font-weight-thin mb-4">
-                    Viaje com mais organização
-                  </h1>
-                  <h4 class="subheading text-h6">
-                    Proteja-se! Navegue com segurança
-                  </h4>
-                </div> -->
               </v-parallax>
             </v-card-text>
           </v-card>
@@ -53,36 +43,14 @@
         <v-col cols="4">
           <v-card class="my-10 rounded-xl">
             <v-card-text class="pa-0">
-              <v-parallax class="rounded-xl" :src="gps">
-                <!-- <div
-                  class="d-flex flex-column fill-height justify-center align-center text-white"
-                >
-                  <h1 class="text-h2 font-weight-thin mb-4">
-                    Viaje com mais organização
-                  </h1>
-                  <h4 class="subheading text-h6">
-                    Proteja-se! Navegue com segurança
-                  </h4>
-                </div> -->
-              </v-parallax>
+              <v-parallax class="rounded-xl" :src="gps"> </v-parallax>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="4">
           <v-card class="my-10 rounded-xl">
             <v-card-text class="pa-0">
-              <v-parallax class="rounded-xl" :src="rua">
-                <!-- <div
-                  class="d-flex flex-column fill-height justify-center align-center text-white"
-                >
-                  <h1 class="text-h2 font-weight-thin mb-4">
-                    Viaje com mais organização
-                  </h1>
-                  <h4 class="subheading text-h6">
-                    Proteja-se! Navegue com segurança
-                  </h4>
-                </div> -->
-              </v-parallax>
+              <v-parallax class="rounded-xl" :src="rua"> </v-parallax>
             </v-card-text>
           </v-card>
         </v-col>
@@ -90,42 +58,63 @@
     </div>
   </v-main>
 
-  <section id="sobre" style="min-height: 60vh; padding: 5px 55px 80px">
+  <section
+    class="vantagens mt-15 py-15"
+    style="min-height: 80vh; padding: 5px 55px 80px"
+  >
     <v-row class="fill-height d-flex justify-center">
       <v-col cols="12" lg="6" sm="11" md="11">
         <div
           class="text-justify d-flex justify-center align-start flex-column col-lg-7 col-12 align-center"
         >
-          <div class="text-h5 font-weight-thin my-10">
+          <div class="text-h3 font-weight-thin-bold my-10">O aplicativo</div>
+          <div style="color: gray; font-size: 18px" class="mt-5">
+            O <span class="text-white">Traveler Brasil</span> é o aplicativo
+            ideal para quem busca planejamento financeiro e
+            <span class="text-white">organização</span> em suas viagens. Com
+            foco na <span class="text-white">gestão</span> de despesas de
+            viagem, o app permite que você cadastre suas viagens, adicione
+            gastos detalhados, e vincule despesas a cada viagem de forma
+            <span class="text-white">prática</span>.
+          </div>
+        </div>
+      </v-col>
+    </v-row>
+  </section>
+  <section id="vantagens" style="min-height: 60vh; padding: 5px 115px 80px">
+    <v-row class="fill-height d-flex justify-center">
+      <v-col cols="">
+        <v-card class="my-10 rounded-xl">
+          <v-card-text class="pa-0">
+            <v-parallax
+              class="rounded-xl"
+              :src="globo"
+              style="max-height: 820px"
+            >
+            </v-parallax>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols="12" lg="6" sm="11" md="11">
+        <div
+          class="text-justify d-flex justify-center align-start flex-column col-lg-7 col-12 align-center"
+        >
+          <div class="text-h5 font-weight-thin-bold my-10">
             Quais as vantagens de utilizar Traveler Brasil?
           </div>
           <div style="color: gray">
-            O app
-            <span class="text-white">Traveler Brasil</span>
-            possibilita um maior
-            <span class="text-white">planejamento</span>
-            e <span class="text-white">organização</span>
-            nas suas viagens.
-            <br />
-            <br />
-            Imagine poder salvar o
-            <span class="text-white">histórico de despesas</span>
-            de sua viagem, organizadas por categoria, e com facilidade de
-            visualização.
-            <br />
-            <br />
-            Nosso app possibilita tudo isso, e com um
-            <span class="text-white">design minimalista</span>, onde permite o
-            usuário cadastrar viagens e gastos de maneira
-            <span class="text-white">simples</span>, priorizando a usabilidade e
-            <span class="text-white">fácil visualização</span> das informações
-            desejadas.
+            Com um <span class="text-white">design minimalista</span> e
+            intuitivo, o
+            <span class="text-white">Traveler Brasil</span> prioriza a
+            usabilidade e oferece uma
+            <span class="text-white">visualização clara</span> e
+            <span class="text-white">organizada</span> das informações
+            essenciais, como categorias de despesas, valores gastos, e
+            planejamento futuro. Isso possibilita um
+            <span class="text-white">controle</span> mais eficaz de seus
+            orçamentos de viagem, ajudando você a manter suas finanças sempre
+            sob controle, seja em viagens de lazer ou a trabalho.
           </div>
-          O Traveler Brasil é o aplicativo ideal para quem busca planejamento
-          financeiro e organização em suas viagens. Com foco na gestão de
-          despesas de viagem, o app permite que você cadastre suas viagens,
-          adicione gastos detalhados, e vincule despesas a cada viagem de forma
-          prática.
         </div>
       </v-col>
     </v-row>
@@ -136,6 +125,7 @@
 import city from "@/assets/city.jpg";
 import gps from "@/assets/gps.jpg";
 import rua from "@/assets/rua.jpg";
+import globo from "@/assets/globo.jpg";
 </script>
 
 <style scoped>
@@ -150,6 +140,11 @@ import rua from "@/assets/rua.jpg";
   width: 100%;
   padding: 100px;
   display: flex;
+}
+
+.vantagens {
+  width: 100%;
+  padding: 100px;
 }
 
 .hover {
