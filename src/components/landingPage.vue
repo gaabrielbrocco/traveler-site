@@ -9,13 +9,13 @@
     </div>
   </v-toolbar> -->
 
-  <v-main style="padding: 80px 15px 80px">
+  <v-main style="padding: 100px 115px 80px">
     <div class="container">
       <div
         class="d-flex flex-column fill-height justify-center align-center text-white py-15 mt-15"
       >
-        <h1 class="text-h1 font-weight-thin mb-4">Traveler Brasil</h1>
-        <h4 class="font-weight-thin text-h5 mt-5">
+        <h1 class="text-h1 font-weight-thin mb-4 titulo">Traveler Brasil</h1>
+        <h4 class="font-weight-thin text-h5 mt-5 mb-10">
           Viaje com mais
           <v-chip
             style="background-color: #0e6eff"
@@ -26,17 +26,12 @@
         </h4>
       </div>
     </div>
-    <div class="container-images mb-15">
+    <div class="container-images mb-15 py-15">
       <v-row>
         <v-col cols="">
           <v-card class="my-10 rounded-xl">
             <v-card-text class="pa-0">
-              <v-parallax
-                class="rounded-xl"
-                :src="city"
-                style="max-height: 820px"
-              >
-              </v-parallax>
+              <v-parallax class="rounded-xl" :src="map"> </v-parallax>
             </v-card-text>
           </v-card>
         </v-col>
@@ -59,15 +54,15 @@
   </v-main>
 
   <section
-    class="vantagens mt-15 py-15"
-    style="min-height: 80vh; padding: 5px 55px 80px"
+    class="aplicativo mt-15 py-15"
+    style="min-height: 80vh; padding: 80px 115px 80px"
   >
     <v-row class="fill-height d-flex justify-center">
-      <v-col cols="12" lg="6" sm="11" md="11">
+      <v-col cols="6" class="mt-10">
         <div
-          class="text-justify d-flex justify-center align-start flex-column col-lg-7 col-12 align-center"
+          class="text-justify d-flex justify-center align-center flex-column"
         >
-          <div class="text-h3 font-weight-thin-bold my-10">O aplicativo</div>
+          <div class="text-h3 font-weight-thin my-10">O aplicativo</div>
           <div style="color: gray; font-size: 18px" class="mt-5">
             O <span class="text-white">Traveler Brasil</span> é o aplicativo
             ideal para quem busca planejamento financeiro e
@@ -82,9 +77,9 @@
     </v-row>
   </section>
   <section id="vantagens" style="min-height: 60vh; padding: 5px 115px 80px">
-    <v-row class="fill-height d-flex justify-center">
-      <v-col cols="">
-        <v-card class="my-10 rounded-xl">
+    <v-row class="fill-height d-flex justify-start">
+      <v-col cols="5">
+        <v-card class="my-5 rounded-xl">
           <v-card-text class="pa-0">
             <v-parallax
               class="rounded-xl"
@@ -95,9 +90,9 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="12" lg="6" sm="11" md="11">
+      <v-col cols="7" class="d-flex justify-center align-center pa-10">
         <div
-          class="text-justify d-flex justify-center align-start flex-column col-lg-7 col-12 align-center"
+          class="text-justify d-flex justify-center align-center flex-column"
         >
           <div class="text-h5 font-weight-thin-bold my-10">
             Quais as vantagens de utilizar Traveler Brasil?
@@ -119,41 +114,148 @@
       </v-col>
     </v-row>
   </section>
+
+  <section
+    id="funcionalidades"
+    class="mt-15 py-15"
+    style="min-height: 80vh; padding: 5px 115px 80px; background-color: #f5f5f5"
+  >
+    <v-row class="d-flex justify-center" style="min-height: 25vh">
+      <v-col cols="12" sm="11" md="11">
+        <div class="text-center my-10">
+          <div class="text-h3 text-black font-weight-thin">Funcionalidades</div>
+          <div
+            class="font-weight-thin mt-3"
+            style="color: gray; font-size: 22px"
+          >
+            Facilite suas viagens com organização, controle de gastos e muito
+            mais.
+          </div>
+        </div>
+      </v-col>
+    </v-row>
+
+    <v-row class="d-flex justify-center mt-10" style="min-height: 25vh">
+      <v-col cols="4" class="mr-10">
+        <v-row class="d-flex justify-center align-center text-h5 mb-5">
+          <strong class="text-black font-weight-light"
+            >Comparativo Gasto Previsto x Gasto Real:</strong
+          >
+        </v-row>
+        <v-row>
+          <div
+            class="text-center font-weight-thin mt-5 px-5"
+            style="color: gray; font-size: 20px"
+          >
+            Cadastre seus gastos previstos e acompanhe a diferença com os
+            valores reais conforme suas despesas forem inseridas.
+          </div>
+        </v-row>
+      </v-col>
+
+      <v-col cols="4" class="ml-10">
+        <v-row class="d-flex justify-center align-center text-h5 mb-5">
+          <strong class="text-black font-weight-light"
+            >Organização por Categorias:</strong
+          >
+        </v-row>
+        <v-row>
+          <div
+            class="text-center font-weight-thin mt-5 px-5"
+            style="color: gray; font-size: 20px"
+          >
+            Separe suas despesas por categorias (alimentação, transporte,
+            hospedagem, etc.) para uma visão clara e organizada dos gastos.
+          </div>
+        </v-row>
+      </v-col>
+    </v-row>
+
+    <v-row class="d-flex justify-center mt-10" style="min-height: 25vh">
+      <v-col cols="4" class="mr-10">
+        <v-row class="d-flex justify-center align-center text-h5 mb-5">
+          <strong class="text-black font-weight-light"
+            >Histórico de Viagens:</strong
+          >
+        </v-row>
+        <v-row>
+          <div
+            class="text-center font-weight-thin mt-5 px-5"
+            style="color: gray; font-size: 20px"
+          >
+            Suas viagens ficam salvas em um histórico detalhado, com informações
+            de despesas e planejamento acessíveis a qualquer momento.
+          </div>
+        </v-row>
+      </v-col>
+
+      <v-col cols="4" class="ml-10">
+        <v-row class="d-flex justify-center align-center text-h5 mb-5">
+          <strong class="text-black font-weight-light"
+            >Localização da Cidade de Destino:</strong
+          >
+        </v-row>
+        <v-row>
+          <div
+            class="text-center font-weight-thin mt-5 px-5"
+            style="color: gray; font-size: 20px"
+          >
+            Informe a localização da cidade de destino e acompanhe a rota em um
+            mapa integrado para planejar os deslocamentos.
+          </div>
+        </v-row>
+      </v-col>
+    </v-row>
+  </section>
+
+  <section
+    id="contato"
+    style="min-height: 60vh; padding: 5px 115px 80px"
+    class="mt-15 py-15"
+  >
+    <v-row class="d-flex justify-center" style="min-height: 25vh">
+      <v-col cols="12" sm="11" md="11">
+        <div class="text-center my-10">
+          <div class="text-h3 font-weight-thin">Em breve</div>
+          <div
+            class="font-weight-thin mt-3"
+            style="color: gray; font-size: 22px"
+          >
+            Uma nova maneira de simplificar sua viagem
+          </div>
+        </div>
+      </v-col>
+    </v-row>
+
+    <v-row class="d-flex align-center justify-center">
+      <v-col cols="12" sm="2">
+        <v-img :src="apple" width="250"></v-img>
+      </v-col>
+      <v-col cols="12" sm="2">
+        <v-img :src="ps" width="250"></v-img>
+      </v-col>
+    </v-row>
+  </section>
+
+  <section id="contato" style="min-height: 5vh" class="mb-5">
+    <div class="d-flex flex-column align-center justify-center">
+      <p class="font-weight-thin text-h6">contato@travelerbrasil.com</p>
+    </div>
+  </section>
 </template>
 
 <script setup>
-import city from "@/assets/city.jpg";
-import gps from "@/assets/gps.jpg";
-import rua from "@/assets/rua.jpg";
-import globo from "@/assets/globo.jpg";
+import apple from "../assets/apple.png";
+import ps from "../assets/ps.png";
+import globo from "../assets/globo.jpg";
+import gps from "../assets/gps.jpg";
+import rua from "../assets/rua.jpg";
+import map from "../assets/map.jpg";
 </script>
 
 <style scoped>
-.container {
-  width: 75%;
-  padding: 12px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.container-images {
-  width: 100%;
-  padding: 100px;
-  display: flex;
-}
-
-.vantagens {
-  width: 100%;
-  padding: 100px;
-}
-
-.hover {
-  transition: all 0.5s;
-  filter: brightness(0.8);
-}
-
 .hover:hover {
   transform: scale(1.05);
-  filter: brightness(105%);
+  transition: all 0.3s ease;
 }
 </style>
