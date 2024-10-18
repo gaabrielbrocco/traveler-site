@@ -14,15 +14,19 @@
       <div
         class="d-flex flex-column fill-height justify-center align-center text-white py-15 mt-15"
       >
-        <h1 class="text-h1 font-weight-thin mb-4 titulo">Traveler Brasil</h1>
-        <h4 class="font-weight-thin text-h5 mt-5 mb-10">
+        <h1 class="text-h1 font-weight-thin mb-4 title">Traveler Brasil</h1>
+        <h4
+          class="font-weight-thin text-h5 mt-5 mb-10"
+          data-aos="fade-right"
+          data-aos-duration="3000"
+        >
           Viaje com mais
           <v-chip
             style="background-color: #0e6eff"
             size="large"
             class="font-weight-thin text-h6 mb-1 font-weight-bold"
-            >organização</v-chip
-          >
+            >organização
+          </v-chip>
         </h4>
       </div>
     </div>
@@ -62,8 +66,19 @@
         <div
           class="text-justify d-flex justify-center align-center flex-column"
         >
-          <div class="text-h3 font-weight-thin my-10">O aplicativo</div>
-          <div style="color: gray; font-size: 18px" class="mt-5">
+          <div
+            class="text-h3 font-weight-thin my-10"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
+            O aplicativo
+          </div>
+          <div
+            style="color: gray; font-size: 18px"
+            class="mt-5"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             O <span class="text-white">Traveler Brasil</span> é o aplicativo
             ideal para quem busca planejamento financeiro e
             <span class="text-white">organização</span> em suas viagens. Com
@@ -79,7 +94,11 @@
   <section id="vantagens" style="min-height: 60vh; padding: 5px 115px 80px">
     <v-row class="fill-height d-flex justify-start">
       <v-col cols="5">
-        <v-card class="my-5 rounded-xl">
+        <v-card
+          class="my-5 rounded-xl"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <v-card-text class="pa-0">
             <v-parallax
               class="rounded-xl"
@@ -136,7 +155,12 @@
     </v-row>
 
     <v-row class="d-flex justify-center mt-10" style="min-height: 25vh">
-      <v-col cols="4" class="mr-10">
+      <v-col
+        cols="4"
+        class="mr-10"
+        data-aos="fade-right"
+        data-aos-duration="3000"
+      >
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Comparativo Gasto Previsto x Gasto Real:</strong
@@ -153,7 +177,12 @@
         </v-row>
       </v-col>
 
-      <v-col cols="4" class="ml-10">
+      <v-col
+        cols="4"
+        class="ml-10"
+        data-aos="fade-left"
+        data-aos-duration="3000"
+      >
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Organização por Categorias:</strong
@@ -172,7 +201,12 @@
     </v-row>
 
     <v-row class="d-flex justify-center mt-10" style="min-height: 25vh">
-      <v-col cols="4" class="mr-10">
+      <v-col
+        cols="4"
+        class="mr-10"
+        data-aos="fade-right"
+        data-aos-duration="3000"
+      >
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Histórico de Viagens:</strong
@@ -189,7 +223,12 @@
         </v-row>
       </v-col>
 
-      <v-col cols="4" class="ml-10">
+      <v-col
+        cols="4"
+        class="ml-10"
+        data-aos="fade-left"
+        data-aos-duration="3000"
+      >
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Localização da Cidade de Destino:</strong
@@ -200,8 +239,8 @@
             class="text-center font-weight-thin mt-5 px-5"
             style="color: gray; font-size: 20px"
           >
-            Informe a localização da cidade de destino e acompanhe a rota em um
-            mapa integrado para planejar os deslocamentos.
+            Informe a localização da cidade de destino para ter um histórico
+            mais completo de suas viagens.
           </div>
         </v-row>
       </v-col>
@@ -257,5 +296,19 @@ import map from "../assets/map.jpg";
 .hover:hover {
   transform: scale(1.05);
   transition: all 0.3s ease;
+}
+
+.title {
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
