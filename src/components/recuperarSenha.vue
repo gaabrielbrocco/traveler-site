@@ -5,7 +5,7 @@
         class="mx-auto my-8"
         max-width="344"
         variant="text"
-        v-if="!tokenExpired"
+        v-if="tokenExpired"
       >
         <v-card-item class="d-flex align-center justify-center text-center">
           <img
@@ -23,9 +23,9 @@
       </v-card>
 
       <v-card
+        v-else
         class="mx-auto my-8 pa-8 rounded-xl container"
         max-width="550"
-        v-if="tokenExpired"
         style="background-color: #00050d"
         :variant="mobile ? 'default' : 'outlined'"
       >
