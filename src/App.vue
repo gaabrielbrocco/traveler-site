@@ -1,14 +1,12 @@
 <template>
   <v-app>
     <v-main style="background-color: #00050d">
-      <landing-page />
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
-<script setup>
-import landingPage from "./components/landingPage.vue";
-</script>
+<script setup></script>
 
 <style>
 * {
