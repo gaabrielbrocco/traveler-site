@@ -23,7 +23,7 @@
       </v-card>
 
       <v-card
-        v-else
+        v-else-if="!tokenExpired && !success"
         class="mx-auto my-8 pa-8 rounded-xl container"
         max-width="550"
         style="background-color: #00050d"
