@@ -10,7 +10,7 @@
         <p>Seu token de recuperação expirou.</p>
       </v-col>
 
-      <v-col cols="12" sm="8" md="4" v-else class="container">
+      <v-col cols="12" sm="8" md="4" class="container">
         <h1>Recuperação de Senha</h1>
         <v-row>
           <v-col cols="12" class="input-container">
@@ -54,7 +54,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { VBtn, VTextField } from "vuetify/lib";
 
 const novaSenha = ref("");
 const confirmarSenha = ref("");
