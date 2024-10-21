@@ -1,64 +1,109 @@
 <template>
-  <v-container fluid>
-    <v-row justify="center" align="center" class="fill-height">
-      <v-col cols="12" sm="8" md="4" v-if="tokenExpired" class="error-message">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
-          alt="Erro"
-        />
-        <h1>Ooops...!</h1>
-        <p>Seu token de recuperação expirou.</p>
-      </v-col>
+  <v-container class="d-flex align-center justify-center fill-height" fluid>
+    <v-row class="d-flex justify-center align-center">
+      <v-card
+        class="mx-auto my-8"
+        max-width="344"
+        variant="text"
+        v-if="!tokenExpired"
+      >
+        <v-card-item class="d-flex align-center justify-center text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
+            width="130"
+          />
+          <v-card-title>
+            <h1>Ooops...!</h1>
+          </v-card-title>
+        </v-card-item>
 
-      <v-col cols="12" sm="8" md="4" class="container">
-        <h1>Recuperação de Senha</h1>
+        <v-card-text class="text-justify">
+          <h3 class="font-weight-light">Seu token de recuperação expirou.</h3>
+        </v-card-text>
+      </v-card>
+
+      <v-card
+        class="mx-auto my-8 pa-8 rounded-xl container"
+        max-width="550"
+        v-if="tokenExpired"
+        style="background-color: #00050d"
+        :variant="mobile ? 'default' : 'outlined'"
+      >
+        <h1 class="text-center mb-3 font-weight-light">Recuperação de Senha</h1>
         <v-row>
           <v-col cols="12" class="input-container">
             <v-text-field
-              type="password"
               label="Nova senha"
               v-model="novaSenha"
-              outlined
+              variant="underlined"
               hide-details
               dense
+              @click:append-inner="showPassword = !showPassword"
+              :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showPassword ? 'text' : 'password'"
             />
           </v-col>
           <v-col cols="12" class="input-container">
             <v-text-field
-              type="password"
               label="Confirme a senha"
               v-model="confirmarSenha"
-              outlined
+              variant="underlined"
               hide-details
               dense
+              @click:append-inner="showConfirmPassword = !showConfirmPassword"
+              :append-inner-icon="
+                showConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'
+              "
+              :type="showConfirmPassword ? 'text' : 'password'"
             />
           </v-col>
         </v-row>
-        <v-btn class="mt-4" color="primary" @click="alterarSenha" block>
+        <v-btn
+          class="mt-10 rounded-xl"
+          style="background-color: #0e6eff"
+          @click="alterarSenha"
+          block
+        >
           Alterar senha
         </v-btn>
-        <div class="footer">2024 Traveler Brasil</div>
-      </v-col>
+        <div class="text-center mt-5">2024 Traveler Brasil</div>
+      </v-card>
 
-      <v-col cols="12" sm="8" md="4" v-if="success" class="success-message">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
-          alt="Sucesso"
-        />
-        <h1>Senha Alterada!</h1>
-        <p>Sua senha foi alterada com sucesso.</p>
-      </v-col>
+      <v-card
+        class="mx-auto my-8"
+        max-width="344"
+        variant="text"
+        v-if="success"
+      >
+        <v-card-item class="d-flex align-center justify-center text-center">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+            width="130"
+          />
+          <v-card-title>
+            <h1>Senha Alterada!</h1>
+          </v-card-title>
+        </v-card-item>
+
+        <v-card-text class="text-center">
+          <h3 class="font-weight-light">Sua senha foi alterada com sucesso.</h3>
+        </v-card-text>
+      </v-card>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useDisplay } from "vuetify";
+const { mobile } = useDisplay();
 
 const novaSenha = ref("");
 const confirmarSenha = ref("");
 const token = ref(null);
 const tokenExpired = ref(false);
+const showPassword = ref(false);
+const showConfirmPassword = ref(false);
 const success = ref(false);
 
 function isTokenExpired(token) {
@@ -127,57 +172,7 @@ async function alterarSenha() {
 </script>
 
 <style scoped>
-body {
+.container {
   background-color: #0f1624;
-  font-family: Arial, sans-serif;
-}
-
-.container,
-.success-message,
-.error-message {
-  text-align: center;
-  background-color: #0f1624;
-  padding: 40px;
-  border-radius: 10px;
-  color: white;
-}
-
-img {
-  width: 60px;
-  margin-bottom: 40px;
-}
-
-h1 {
-  color: white;
-  font-size: 24px;
-  margin-bottom: 60px;
-}
-
-.input-container {
-  margin-bottom: 20px;
-}
-
-.footer {
-  color: white;
-  font-size: 12px;
-  margin-top: 30px;
-}
-
-.success-message img,
-.error-message img {
-  width: 100px;
-  margin-bottom: 40px;
-}
-
-.success-message h1,
-.error-message h1 {
-  font-size: 44px;
-  margin-bottom: 20px;
-}
-
-.success-message p,
-.error-message p {
-  font-size: 16px;
-  margin-bottom: 20px;
 }
 </style>
