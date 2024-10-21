@@ -1,40 +1,60 @@
 <template>
-  <div v-if="tokenExpired" class="error-message">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
-      alt="Erro"
-    />
-    <h1>Ooops...!</h1>
-    <p>Seu token de recuperação expirou.</p>
-  </div>
-  <div class="container">
-    <h1>Recuperação de Senha</h1>
-    <div class="input-container">
-      <input type="password" placeholder="Nova senha" v-model="novaSenha" />
-    </div>
-    <div class="input-container">
-      <input
-        type="password"
-        placeholder="Confirme a senha"
-        v-model="confirmarSenha"
-      />
-    </div>
-    <button @click="alterarSenha">Alterar senha</button>
-    <div class="footer">2024 Traveler Brasil</div>
-  </div>
+  <v-container fluid>
+    <v-row justify="center" align="center" class="fill-height">
+      <v-col cols="12" sm="8" md="4" v-if="tokenExpired" class="error-message">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
+          alt="Erro"
+        />
+        <h1>Ooops...!</h1>
+        <p>Seu token de recuperação expirou.</p>
+      </v-col>
 
-  <div v-if="success" class="success-message">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
-      alt="Sucesso"
-    />
-    <h1>Senha Alterada!</h1>
-    <p>Sua senha foi alterada com sucesso.</p>
-  </div>
+      <v-col cols="12" sm="8" md="4" v-else class="container">
+        <h1>Recuperação de Senha</h1>
+        <v-row>
+          <v-col cols="12" class="input-container">
+            <v-text-field
+              type="password"
+              label="Nova senha"
+              v-model="novaSenha"
+              outlined
+              hide-details
+              dense
+            />
+          </v-col>
+          <v-col cols="12" class="input-container">
+            <v-text-field
+              type="password"
+              label="Confirme a senha"
+              v-model="confirmarSenha"
+              outlined
+              hide-details
+              dense
+            />
+          </v-col>
+        </v-row>
+        <v-btn class="mt-4" color="primary" @click="alterarSenha" block>
+          Alterar senha
+        </v-btn>
+        <div class="footer">2024 Traveler Brasil</div>
+      </v-col>
+
+      <v-col cols="12" sm="8" md="4" v-if="success" class="success-message">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+          alt="Sucesso"
+        />
+        <h1>Senha Alterada!</h1>
+        <p>Sua senha foi alterada com sucesso.</p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { VBtn, VTextField } from "vuetify/lib";
 
 const novaSenha = ref("");
 const confirmarSenha = ref("");
@@ -111,19 +131,16 @@ async function alterarSenha() {
 body {
   background-color: #0f1624;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
-.container {
+.container,
+.success-message,
+.error-message {
   text-align: center;
   background-color: #0f1624;
   padding: 40px;
   border-radius: 10px;
-  width: 300px;
+  color: white;
 }
 
 img {
@@ -141,90 +158,25 @@ h1 {
   margin-bottom: 20px;
 }
 
-input[type="password"] {
-  width: 93%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #1b2433;
-  color: white;
-  font-size: 16px;
-}
-
-button {
-  width: 92%;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px;
-  font-size: 18px;
-  margin-top: 25px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.link {
-  color: white;
-  font-size: 14px;
-  margin-top: 20px;
-  display: block;
-}
-
 .footer {
   color: white;
   font-size: 12px;
   margin-top: 30px;
 }
 
-.success-message {
-  display: none;
-  text-align: center;
-  background-color: #0f1624;
-  padding: 40px;
-  border-radius: 10px;
-  width: 300px;
-  color: white;
-}
-
-.success-message img {
-  width: 100px;
-  margin-bottom: 40px;
-}
-
-.success-message h1 {
-  font-size: 44px;
-  margin-bottom: 20px;
-}
-
-.success-message p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.error-message {
-  display: none;
-  text-align: center;
-  background-color: #0f1624;
-  padding: 40px;
-  border-radius: 10px;
-  width: 300px;
-  color: white;
-}
-
+.success-message img,
 .error-message img {
   width: 100px;
   margin-bottom: 40px;
 }
 
+.success-message h1,
 .error-message h1 {
   font-size: 44px;
   margin-bottom: 20px;
 }
 
+.success-message p,
 .error-message p {
   font-size: 16px;
   margin-bottom: 20px;
