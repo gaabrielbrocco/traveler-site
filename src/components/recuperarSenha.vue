@@ -1,5 +1,13 @@
 <template>
-  <div v-if="!tokenExpired" class="container">
+  <div v-if="tokenExpired" class="error-message">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
+      alt="Erro"
+    />
+    <h1>Ooops...!</h1>
+    <p>Seu token de recuperação expirou.</p>
+  </div>
+  <div class="container">
     <h1>Recuperação de Senha</h1>
     <div class="input-container">
       <input type="password" placeholder="Nova senha" v-model="novaSenha" />
@@ -22,15 +30,6 @@
     />
     <h1>Senha Alterada!</h1>
     <p>Sua senha foi alterada com sucesso.</p>
-  </div>
-
-  <div v-if="tokenExpired" class="error-message">
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/753/753345.png"
-      alt="Erro"
-    />
-    <h1>Ooops...!</h1>
-    <p>Seu token de recuperação expirou.</p>
   </div>
 </template>
 
