@@ -1,6 +1,7 @@
 <template>
   <v-main
     :style="mobile ? 'padding: 100px 25px 80px' : 'padding: 100px 80px 80px'"
+    style="overflow: hidden"
   >
     <div class="container">
       <div
@@ -218,7 +219,7 @@
     v-if="mobile"
     id="funcionalidades"
     class="mt-15 py-15"
-    style="min-height: 120vh; padding: 5px 25px 80px; background-color: #f5f5f5"
+    style="min-height: 120vh; padding: 5px 25px 10px; background-color: #f5f5f5"
   >
     <v-row class="d-flex justify-center" style="min-height: 25vh">
       <v-col cols="12">
@@ -239,7 +240,7 @@
       class="d-flex justify-center text-center mt-10 py-10"
       style="min-height: 25vh"
     >
-      <v-col cols="12" data-aos="fade-right" data-aos-duration="3000">
+      <v-col cols="12">
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Comparativo Gasto Previsto x Gasto Real:</strong
@@ -256,12 +257,7 @@
         </v-row>
       </v-col>
 
-      <v-col
-        cols="12"
-        data-aos="fade-left"
-        data-aos-duration="3000"
-        class="py-10 mt-10"
-      >
+      <v-col cols="12" class="py-10 mt-10">
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Organização por Categorias:</strong
@@ -283,7 +279,7 @@
       class="d-flex justify-center text-center mt-10"
       style="min-height: 25vh"
     >
-      <v-col cols="12" data-aos="fade-right" data-aos-duration="3000">
+      <v-col cols="12">
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Histórico de Viagens:</strong
@@ -300,12 +296,7 @@
         </v-row>
       </v-col>
 
-      <v-col
-        cols="12"
-        data-aos="fade-left"
-        data-aos-duration="3000"
-        class="mt-10 py-10"
-      >
+      <v-col cols="12" class="mt-10 py-10">
         <v-row class="d-flex justify-center align-center text-h5 mb-5">
           <strong class="text-black font-weight-light"
             >Localização da Cidade de Destino:</strong
